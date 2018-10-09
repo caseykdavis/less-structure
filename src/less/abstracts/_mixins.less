@@ -1,0 +1,140 @@
+// ----------------------------------------------------------------------
+// Mixins:
+// File Name: _mixins.less
+// Description: Global Mixins
+// Used by: Globally
+// ----------------------------------------------------------------------
+
+// Background cover
+@mixin background-cover(){
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+// Box Model # example: @include background-cover();
+@mixin box-sizing($box-model) {
+  box-sizing: $box-model;
+}
+
+// Breakpoints # example @include breakpoint(940) { width:80%; }
+@mixin breakpoint($size) {
+  @media only screen and (max-width: $size + px) { @content; }
+}
+
+// Clearfix # example @include clearfix();
+@mixin clearfix() {
+  & {
+    content: ' ';
+    display: table;
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Inline-Block # example: @include inline-block();
+@mixin inline-block() {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+
+// Hide text # example: @include hide-text();
+@mixin hide-text() {
+  position: relative;
+  text-indent: -99999px;
+  display: inline-block;
+}
+
+// Hover focus # example @include hoverFocus('text-decoration', 'none');
+@mixin hoverFocus($property, $value) {
+  &:hover, &:focus {
+    #{$property}: $value;
+  }
+}
+
+// Keyframes # example: @include keyframes(slide-down) {0%{ opacity:1; } 90%{ opacity:0; }}
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// Auto Margin # example: @include margin-auto();
+@mixin margin-auto() {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// REM Units with PX Fallback
+// example: @include rem("margin", 10, 5, 10, 5);
+// example: @include rem("font-size", 14);
+
+@mixin rem($property, $values...) {
+ $n: length($values);
+ $i: 1;
+
+ $pxlist: ();
+ $remlist: ();
+
+ @while $i <= $n {
+   $itemVal: (nth($values, $i));
+   @if $itemVal != "auto"{
+     $pxlist: append($pxlist, $itemVal + px);
+     //$remlist: append($remlist, ($itemVal / 10) + rem); // Use this if you've set HTML font size value to 62.5%
+     $remlist: append($remlist, ($itemVal / 16) + rem);
+   } @else {
+     $pxlist: append($pxlist, auto);
+     $remlist: append($remlist, auto);
+   }
+
+   $i: $i + 1;
+ }
+
+ #{$property}: $pxlist;
+ #{$property}: $remlist;
+}
+
+// Retina Images # example: @include retina("logo2x.png", 100, 50);
+
+@mixin retina($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+       (-o-min-device-pixel-ratio: 2.6/2),
+       (-webkit-min-device-pixel-ratio: 1.3),
+       (min-device-pixel-ratio: 1.3),
+       (min-resolution: 1.3dppx) {
+    background-image: url("#{$image}");
+    background-size: $width + px $height + px;
+    //background-size: $width / 10 + rem $height / 10 + rem; // Use this if you've set HTML font size value to 62.5%
+    background-size: $width / 16 + rem $height / 16 + rem;
+  }
+}

@@ -1,0 +1,88 @@
+// ----------------------------------------------------------------------
+// Variables:
+// File Name: _vars.less
+// Description: Global Variables
+// Used by: Globally
+// ----------------------------------------------------------------------
+
+// Variable Rules:
+// 1. Any values commonly throughout the SASS build should be set as a variable (fonts, colors, percentages, z-index)
+// 2. All colors should be variables
+
+// Directories
+// ----------------------------------------------------------------------
+@font-dir: '../../fonts/';
+@img-dir: '../../img/';
+@svg-dir: '../../public/img/svg/';
+@jpg-dir: '../../img/jpg/';
+@png-dir: '../../public/img/png/';
+@gif-dir: '../../img/gif/';
+
+// 1. Colors:
+// ----------------------------------------------------------------------
+
+// a) Base Colors
+@black: #000;
+@white: #fff;
+@gray: #242424;
+
+
+// Fonts & Typography
+// ----------------------------------------------------------------------
+
+// Fonts
+@helvetica: Helvetica, Arial, sans-serif;
+
+// Font weights
+@extralight: 100;
+@light: 200;
+@book: 300;
+@regular: 400;
+@medium: 500;
+@semibold: 600;
+@bold: 700;
+@extrabold: 800;
+@extrablack: 900;
+
+// Base Font
+// # Using System Font Stack by default (https://css-tricks.com/snippets/css/system-font-stack/)
+@base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,Oxygen-Sans,Ubuntu,Cantarell, "Helvetica Neue", sans-serif;;
+@base-font-weight: @regular;
+@base-font-size: 1.2em;
+@base-font-size-px: @base-font-size * 1px;
+@base-line-height: 1.4;
+@base-font-color: #333;
+
+// Fixed Font
+@fixed-font-family: monospace;
+@fixed-font-size: 85%;
+@fixed-line-height: @base-line-height;
+
+// Headings
+@header-font-weight: @bold;
+
+
+// 2. UI Elements
+// ----------------------------------------------------------------------
+
+  // a) Navigation
+  @nav-bg: #333;
+  @nav-breakpoint: 768px;
+
+  // b) Buttons
+  @button-bg: @brand-primary;
+  @button-outline: @button-bg;
+  @border-radius-default: 4px;
+
+  // c) Jumbotron
+  @jumbotron-text-size: 3em;
+
+// ----------------------------------------------------------------------
+  // Grid
+// ----------------------------------------------------------------------
+@grid-columns: 12;
+
+// ----------------------------------------------------------------------
+// Media Queries
+// ----------------------------------------------------------------------
+@maxWidth: 1280;

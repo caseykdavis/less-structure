@@ -1,23 +1,23 @@
 {
-  "name": "bootstrap-3-less-gulp-boilerplate",
+  "name": "eTool-LESS-structure-OLD",
   "version": "1.0.0",
-  "description": "Bootstrap 3 boilerplate with LESS compiling and other features with Gulp",
-  "main": "index.js",
+  "description": "New eTool LESS Structure Framework & Demo Example",
+  "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pyrliu/bootstrap-3-less-gulp-boilerplate.git"
+    "url": "git+https://github.com/caseykdavis/LESS-Framework.git"
   },
   "keywords": [
     "bootstrap",
     "less",
     "gulp"
   ],
-  "author": "Pyry Liukas <pyry@tidycms.com>",
+  "author": "Casey K. Davis <casey@etooldev.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pyrliu/bootstrap-3-less-gulp-boilerplate/issues"
+    "url": "https://github.com/caseykdavis/LESS-Framework.git/issues"
   },
-  "homepage": "https://github.com/pyrliu/bootstrap-3-less-gulp-boilerplate#readme",
+  "homepage": "https://github.com/caseykdavis/LESS-Framework.git#readme",
   "dependencies": {
     "bootstrap": "^3.3.6",
     "gulp": "^3.9.0",

@@ -1,0 +1,38 @@
+// ----------------------------------------------------------------------
+// Footer:
+// File Name: _footer.less
+// Description: Global Footer Styles
+// Used by: Footer
+// ----------------------------------------------------------------------
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: @brand-primary;
+  color: darken(@brand-primary, 20%);
+  padding: 20px 0;
+
+  .container {
+
+    nav {
+      &.navbar.navbar-inverse {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        min-height: auto;
+
+        a {
+          color: @text-inverse;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      .align-right();
+    }
+  }
+}

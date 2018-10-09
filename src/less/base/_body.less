@@ -1,0 +1,68 @@
+// ----------------------------------------------------------------------
+// Body:
+// File Name: _body.less
+// Description: Main Body Styles
+// Used by: Body
+// ----------------------------------------------------------------------
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  overflow-x: hidden;
+  background: @white;
+
+  body {
+    font-family: @base-font-family;
+    font-size: @base-font-size;
+    line-height: @base-line-height;
+
+    @media screen and (max-width: 500px) {
+      font-size: @base-font-size * 0.85;
+    }
+
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+}
+
+section, header, footer {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+a,
+button {
+	cursor: pointer;
+	outline: none;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+p {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+ul, ol {
+  margin-bottom: 2.5rem;
+
+  li {
+    line-height: inherit;
+  }
+}

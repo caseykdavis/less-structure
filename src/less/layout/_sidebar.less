@@ -1,0 +1,64 @@
+// ----------------------------------------------------------------------
+// Sidebar:
+// File Name: _sidebar.less
+// Description: Global Sidebar Styles
+// Used by: All pages that include a Sidebar Style Layout
+// ----------------------------------------------------------------------
+
+.sidebar {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  
+  .mobile_collapse {
+
+  }
+
+  .show_mobile_nav & {
+
+    .mobile_collapse {
+
+    }
+
+    nav {
+      padding: 1rem;
+      overflow: hidden;
+      width: 0;
+
+      .show_mobile_nav & {
+        width: 100%;
+      }
+
+      ul {
+        margin: 0 0 0 0;
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        line-height: 2.4;
+
+        a {
+          color: @white;
+          text-decoration: none;
+          transition: 0.5s ease-in-out;
+          display: none;
+          padding-left: 2rem;
+          line-height: 3;
+
+          .show_mobile_nav & {
+            display: block;
+            text-align: center;
+            padding-left: 0;
+          }
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

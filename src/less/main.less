@@ -1,4 +1,50 @@
+// ----------------------------------------------------------------------
+// Main:
+// File Name: main.less
+// Description: Imports all Stylesheets
+// Used by: Globally
+// ----------------------------------------------------------------------
+
+@charset "UTF-8";
+
+// Style Rules:
+// 1. There should only be a maximum of 2 CSS files per page ( this prevents HTTP requests )
+// 2. One line for each selector or rule
+// 3. List related items together
+// 4. Only nest 3 levels deep
+// 5. Break files out into small modules (avoid having a SCSS file that is larger than 100 lines)
+// 6. Avoid using IDs throughout the site. Use IDs for parent elements. Example: Header, Footer, Main. Using Classes avoids having to use !important
+// 7. Be generous with commenting
+// 8. If a :hover pseudo class is styled, :focus should also be styled for accessibility.
+
+// Imports:
+
+// 1. Vendors:
+// # Styles reset (normalize) and Third-Party LESS entry point
 @import '../../node_modules/bootstrap/less/bootstrap.less';
 
-//your less code
-@brand-primary: salmon;
+// 2. Abstracts:
+// # Mixins, Functions & Helpers...
+// @import 'abstracts/_mixins.less';
+// @import 'abstracts/_functions.less';
+@import 'abstracts/_utilities.less';
+
+// 3. Base:
+// # Variables, Fonts, Extra Reset Options (if need to reset Bootstrap/Vendor styles). Common styles used across the entire site
+@import 'base/_reset.less';
+@import 'base/_vars.less';
+@import 'base/_fonts.less';
+@import 'base/_icons.less';
+@import 'base/_body.less';
+@import 'base/_brand.less';
+
+// 4. Layout:
+// # Strictly Structural Base styles for the entire website (Header, Footer, Sidebar, Main Content Area, etc.)
+@import 'layout/_layout.less';
+
+// 5. Components:
+// # Reusable Components that are minimally styled to function and used across several sites/pages
+@import 'components/_components.less';
+
+// 6. Pages:
+@import 'pages/_pages.less';
